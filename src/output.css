@@ -815,6 +815,10 @@ video {
     max-width: 36rem;
   }
 
+  .sm\:max-w-prose {
+    max-width: 65ch;
+  }
+
   .sm\:flex-1 {
     flex: 1 1 0%;
   }
@@ -853,6 +857,10 @@ video {
 
   .sm\:items-center {
     align-items: center;
+  }
+
+  .sm\:justify-end {
+    justify-content: flex-end;
   }
 
   .sm\:justify-center {
