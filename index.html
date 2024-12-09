@@ -1,128 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./src/output.css" rel="stylesheet" />
+    <title>Resume</title>
   </head>
-  <body class="sm:flex sm:content-end sm:flex-col sm:items-center">
+  <body class="flex flex-col items-center sm:content-end">
     <div class="text-sm pt-7 px-5 sm:min-w-[595px] sm:px-0">
-      <header class="mb-4 sm:flex sm:mb-12 sm:items-center">
-        <h1 class="text-2xl font-bold mb-2 sm:flex-1">Levi Chiang</h1>
-        <h2>Software Developer</h2>
+      <!-- Header Section -->
+      <header class="mb-8 sm:flex sm:items-center sm:mb-12">
+        <h1 class="text-2xl font-bold sm:flex-1">Levi Chiang</h1>
+        <h2 class="text-lg">Software Developer</h2>
       </header>
-      <section class="sm:flex sm:justify-between">
-        <div class="mb-2 sm:mb-0 sm:basis-1/6">
-          <strong>CONCAT</strong>
-        </div>
+      <!-- Contact Section -->
+      <section class="sm:flex sm:justify-between mb-7">
+        <div class="font-bold mb-2 sm:mb-0 sm:basis-1/5">CONTACT</div>
         <div class="grid grid-cols-1 sm:grid-cols-3 sm:flex-1 max-w-prose">
-          <p><strong>Phone</strong>: +61 421 571 214</p>
+          <p><strong>Phone:</strong> +61 421 571 214</p>
           <p class="sm:col-span-2 sm:justify-self-end">
-            <strong>github page</strong
-            ><a href="https://levijcl.github.io/resume"
-              >: https://levijcl.github.io/resume</a
+            <strong>GitHub:</strong>
+            <a
+              href="https://levijcl.github.io/resume"
+              class="text-blue-500 hover:underline"
+              >https://levijcl.github.io/resume</a
             >
           </p>
-          <p><strong>Email</strong>: +61 421 571 214</p>
+          <p class="text-nowrap">
+            <strong>Email:</strong> levilevi80@gmail.com
+          </p>
         </div>
       </section>
-      <section class="my-7">
-        <hr class="border-black w-full" />
-      </section>
-      <section class="text-sm sm:flex sm:justify-between">
-        <div class="mb-2 sm:mb-0 sm:basis-1/6">
-          <strong>PROFESSION EXPERIENCE</strong>
+      <hr class="border-black mb-7" />
+      <!-- Professional Experience Section -->
+      <section class="sm:flex sm:justify-between mb-7">
+        <div class="font-bold mb-2 sm:mb-0 sm:basis-1/5">
+          PROFESSIONAL EXPERIENCE
         </div>
         <div class="sm:flex-1 max-w-prose">
-          <div class="mb-2">
-            <strong>PEGATRON | 2022-2024</strong>
-          </div>
-          <ul class="list-disc list-inside">
-            <li>
-              Designed and implemented a comprehensive Pick, Pack, and Ship
-              system. This involved early-stage system design, front-end and
-              back-end development, and integration with various hardware
-              devices to ensure seamless operations.
-            </li>
-            <li>
-              Gradually introduced unit tests to a legacy spring framework that
-              previously lacked test coverage. Successfully added over 1,000
-              unit tests, significantly improving code reliability and
-              maintainability.
-            </li>
-            <li>
-              Improved the front-end development workflow by streamlining
-              processes and successfully upgrading the system from Vue 2 to Vue
-              3, enhancing performance and maintainability.
-            </li>
-            <li>
-              Advocated for a strong design phase with clear documentation and
-              user communication to ensure solutions meet needs and deliver
-              value. Practiced these principles in my work to lead by example.
-            </li>
-          </ul>
-          <div class="my-2">
-            <div class="mb-2">
-              <strong>Access Taiwan Lab | 2019-2022</strong>
-            </div>
+          <div>
+            <p><strong>PEGATRON | 2022-2024</strong></p>
             <ul class="list-disc list-inside">
+              <li>Designed and implemented a Pick, Pack, and Ship system.</li>
               <li>
-                Contributed to the development of a scheduling system that
-                automated a manual two-week process, reducing it to just a few
-                minutes. Integrated existing client systems and delivered an
-                intuitive interface for visualizing results. Adopted Test-Driven
-                Development (TDD) with Phoenix framework for the back-end.
+                Introduced 1,000+ unit tests to a legacy Spring framework.
               </li>
+              <li>Upgraded a Vue 2 system to Vue 3, enhancing performance.</li>
               <li>
-                Contributed to the development and maintenance of a mobile eBook
-                application, focusing on back-end functionality using Elixir.
+                Promoted strong design documentation and user communication.
               </li>
+            </ul>
+          </div>
+          <div>
+            <p><strong>Access Taiwan Lab | 2019-2022</strong></p>
+            <ul class="list-disc list-inside">
+              <li>Automated scheduling processes using Phoenix framework.</li>
+              <li>Maintained a mobile eBook app back-end with Elixir.</li>
               <li>
-                Participated in the development of an attendance management
-                system from design to implementation. Built the back-end with
-                Elixir and the front-end with React, integrating beacon
-                technology as a time-tracking tool.
+                Built an attendance management system integrating beacon tech.
               </li>
             </ul>
           </div>
         </div>
       </section>
-      <section class="my-7">
-        <hr class="border-black w-full" />
-      </section>
-      <section class="sm:flex sm:justify-between">
-        <div class="mb-2 sm:mb-0 sm:basis-1/6">
-          <strong>SKILLS</strong>
-        </div>
+      <hr class="border-black mb-7" />
+      <!-- Skills Section -->
+      <section class="sm:flex sm:justify-between mb-7">
+        <div class="font-bold mb-2 sm:mb-0 sm:basis-1/5">SKILLS</div>
         <div class="sm:flex-1 max-w-prose">
-          <ul class="list-disc list-inside">
+          <ul
+            class="list-disc list-inside grid grid-cols-1 sm:grid-cols-2 gap-x-4"
+          >
             <li>Spring Framework</li>
             <li>Vue / React</li>
-            <li>JAVA / JavaScript / HTML5 / Elixir / CSS</li>
+            <li>Java / JavaScript / Elixir / HTML5 / CSS</li>
             <li>OracleSQL / MongoDB</li>
             <li>Docker</li>
           </ul>
         </div>
       </section>
-      <section class="my-7">
-        <hr class="border-black w-full" />
-      </section>
-      <section class="sm:flex sm:justify-between">
-        <div class="mb-2 sm:mb-0 sm:basis-1/6">
-          <strong>EDUCATION</strong>
-        </div>
+      <hr class="border-black mb-7" />
+      <!-- Education Section -->
+      <section class="mb-12 sm:flex sm:justify-between">
+        <div class="font-bold mb-2 sm:mb-0 sm:basis-1/5">EDUCATION</div>
         <div class="sm:flex-1 max-w-prose">
-          <div class="mb-2">
+          <p>
             <strong
               >National Taiwan University of Science and Technology</strong
             >
-          </div>
+          </p>
           <ul class="list-disc list-inside">
             <li>Master's Degree, Electrical and Computer Engineering</li>
           </ul>
         </div>
       </section>
-      <footer class="mt-12"></footer>
     </div>
   </body>
 </html>
