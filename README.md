@@ -1,2 +1,3 @@
-# resume
-A resume
+# Resume
+
+[link](https://levijcl.github.io/resume/)
