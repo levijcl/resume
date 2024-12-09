@@ -1,13 +1,99 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./src/output.css" rel="stylesheet">
-</head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <title>Resume</title>
+  </head>
+  <body class="flex flex-col items-center sm:content-end">
+    <div class="text-sm pt-7 px-5 sm:min-w-[595px] sm:px-0">
+      <!-- Header Section -->
+      <header class="mb-8 sm:flex sm:items-center sm:mb-12">
+        <h1 class="text-2xl font-bold sm:flex-1">Levi Chiang</h1>
+        <h2 class="text-lg">Software Developer</h2>
+      </header>
+      <!-- Contact Section -->
+      <section class="sm:flex sm:justify-between mb-7">
+        <div class="font-bold mb-2 sm:mb-0 sm:basis-1/5">CONTACT</div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 sm:flex-1 max-w-prose">
+          <p><strong>Phone:</strong> +61 421 571 214</p>
+          <p class="sm:col-span-2 sm:justify-self-end">
+            <strong>GitHub:</strong>
+            <a
+              href="https://levijcl.github.io/resume"
+              class="text-blue-500 hover:underline"
+              >https://levijcl.github.io/resume</a
+            >
+          </p>
+          <p class="text-nowrap">
+            <strong>Email:</strong> levilevi80@gmail.com
+          </p>
+        </div>
+      </section>
+      <hr class="border-black mb-7" />
+      <!-- Professional Experience Section -->
+      <section class="sm:flex sm:justify-between mb-7">
+        <div class="font-bold mb-2 sm:mb-0 sm:basis-1/5">
+          PROFESSIONAL EXPERIENCE
+        </div>
+        <div class="sm:flex-1 max-w-prose">
+          <div>
+            <p><strong>PEGATRON | 2022-2024</strong></p>
+            <ul class="list-disc list-inside">
+              <li>Designed and implemented a Pick, Pack, and Ship system.</li>
+              <li>
+                Introduced 1,000+ unit tests to a legacy Spring framework.
+              </li>
+              <li>Upgraded a Vue 2 system to Vue 3, enhancing performance.</li>
+              <li>
+                Promoted strong design documentation and user communication.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p><strong>Access Taiwan Lab | 2019-2022</strong></p>
+            <ul class="list-disc list-inside">
+              <li>Automated scheduling processes using Phoenix framework.</li>
+              <li>Maintained a mobile eBook app back-end with Elixir.</li>
+              <li>
+                Built an attendance management system integrating beacon tech.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <hr class="border-black mb-7" />
+      <!-- Skills Section -->
+      <section class="sm:flex sm:justify-between mb-7">
+        <div class="font-bold mb-2 sm:mb-0 sm:basis-1/5">SKILLS</div>
+        <div class="sm:flex-1 max-w-prose">
+          <ul
+            class="list-disc list-inside grid grid-cols-1 sm:grid-cols-2 gap-x-4"
+          >
+            <li>Spring Framework</li>
+            <li>Vue / React</li>
+            <li>Java / JavaScript / Elixir / HTML5 / CSS</li>
+            <li>OracleSQL / MongoDB</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+      </section>
+      <hr class="border-black mb-7" />
+      <!-- Education Section -->
+      <section class="mb-12 sm:flex sm:justify-between">
+        <div class="font-bold mb-2 sm:mb-0 sm:basis-1/5">EDUCATION</div>
+        <div class="sm:flex-1 max-w-prose">
+          <p>
+            <strong
+              >National Taiwan University of Science and Technology</strong
+            >
+          </p>
+          <ul class="list-disc list-inside">
+            <li>Master's Degree, Electrical and Computer Engineering</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
