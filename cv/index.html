@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../src/output.css" rel="stylesheet" />
+    <title>Curriculum Vitae</title>
+  </head>
+  <body class="flex flex-col items-center sm:content-end">
+    <div class="text-sm pt-7 px-5 sm:min-w-[595px] sm:px-0">
+      <!-- Header Section -->
+      <header class="mb-8 sm:flex sm:items-center sm:mb-12">
+        <h1 class="text-2xl font-bold sm:flex-1">Levi Chiang</h1>
+        <h2 class="text-lg">Software Developer</h2>
+      </header>
+      <!-- Contact Section -->
+      <section class="sm:flex sm:justify-between mb-7">
+        <div class="font-bold mb-2 sm:mb-0 sm:basis-1/5">CONTACT</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 sm:flex-1 max-w-prose">
+          <p><strong>Phone:</strong> +61 421 571 214</p>
+          <p>
+            <strong>Resume:</strong>
+            <a href="../" class="text-blue-500 hover:underline"
+              >https://levijcl.github.io/resume</a
+            >
+          </p>
+          <p class="text-nowrap">
+            <strong>Email:</strong> levilevi80@gmail.com
+          </p>
+        </div>
+      </section>
+      <hr class="border-black mb-7" />
+      <!-- Professional Experience Section -->
+      <section class="sm:flex sm:justify-between mb-7">
+        <div class="font-bold mb-2 sm:mb-0 sm:basis-1/5">
+          PROFESSIONAL EXPERIENCE
+        </div>
+        <div class="sm:flex-1 max-w-prose">
+          <div class="sm:mb-2">
+            <p><strong>PEGATRON | 2022-2024</strong></p>
+            <ul class="list-disc list-inside">
+              <li>
+                Designed and implemented a comprehensive Pick, Pack, and Ship
+                system. This involved early-stage system design, front-end and
+                back-end development, and integration with various hardware
+                devices to ensure seamless operations.
+              </li>
+              <li>
+                Gradually introduced unit tests to a legacy spring framework
+                that previously lacked test coverage. Successfully added over
+                1,000 unit tests, significantly improving code reliability and
+                maintainability.
+              </li>
+              <li>
+                Improved the front-end development workflow by streamlining
+                processes and successfully upgrading the system from Vue 2 to
+                Vue 3, enhancing performance and maintainability.
+              </li>
+              <li>
+                Advocated for a strong design phase with clear documentation and
+                user communication to ensure solutions meet needs and deliver
+                value. Practiced these principles in my work to lead by example.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p><strong>Access Taiwan Lab | 2019-2022</strong></p>
+            <ul class="list-disc list-inside">
+              <li>
+                Contributed to the development of a scheduling system that
+                automated a manual two-week process, reducing it to just a few
+                minutes. Integrated existing client systems and delivered an
+                intuitive interface for visualizing results. Adopted Test-Driven
+                Development (TDD) with Phoenix framework for the back-end.
+              </li>
+              <li>
+                Contributed to the development and maintenance of a mobile eBook
+                application, focusing on back-end functionality using Elixir.
+              </li>
+              <li>
+                Participated in the development of an attendance management
+                system from design to implementation. Built the back-end with
+                Elixir and the front-end with React, integrating beacon
+                technology as a time-tracking tool.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
