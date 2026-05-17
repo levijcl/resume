@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./src/output.css" rel="stylesheet" />
     <title>Resume</title>
+    <style>
+      @media print {
+        @page { size: A4; margin: 12mm; }
+        body { font-size: 11px; }
+        header { margin-bottom: 1rem !important; }
+        section { margin-bottom: 0.75rem !important; }
+        hr { margin-bottom: 0.75rem !important; }
+        ul { margin-top: 0.25rem; }
+        li { page-break-inside: avoid; }
+        a { color: black; text-decoration: none; }
+        .pt-7 { padding-top: 0 !important; }
+        .mb-12 { margin-bottom: 0.75rem !important; }
+      }
+    </style>
   </head>
   <body class="flex flex-col items-center sm:content-end">
     <div class="text-sm pt-7 px-5 sm:min-w-[595px] sm:px-0">
