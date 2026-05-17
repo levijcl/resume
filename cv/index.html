@@ -11,7 +11,7 @@
       <!-- Header Section -->
       <header class="mb-8 sm:flex sm:items-center sm:mb-12">
         <h1 class="text-2xl font-bold sm:flex-1">Levi Chiang</h1>
-        <h2 class="text-lg">Software Developer</h2>
+        <h2 class="text-lg">Senior Software Engineer</h2>
       </header>
       <!-- Contact Section -->
       <section class="sm:flex sm:justify-between mb-7">
@@ -36,83 +36,234 @@
           PROFESSIONAL EXPERIENCE
         </div>
         <div class="sm:flex-1 sm:mb-2 max-w-prose">
-          <div>
-            <p><strong>PEGATRON | 2025</strong></p>
-            <ul class="list-disc list-inside">
+          <div class="mb-6">
+            <p class="mb-2"><strong>PEGATRON | Senior Software Engineer | 2026 – Present</strong></p>
+            <div class="space-y-3">
+              <div>
+                <p
+                  class="text-xs uppercase tracking-wider text-gray-600 font-medium mb-0.5"
+                >
+                  Context
+                </p>
+                <p>
+                  PEGATRON expanded into server repair operations, requiring a
+                  new Order Management module to coordinate the full repair
+                  lifecycle across two manufacturing sites. Each repair case is
+                  modeled as an order with inbound intake of defective servers
+                  and outbound shipment through the existing Pick, Pack, and
+                  Ship workflow. The module sits at the integration center —
+                  bridging Inventory, carrier services, and repair-line
+                  operations — so reliability matters more than throughput at
+                  this stage.
+                </p>
+              </div>
+              <div>
+                <p
+                  class="text-xs uppercase tracking-wider text-gray-600 font-medium mb-0.5"
+                >
+                  Role
+                </p>
+                <p>
+                  Sole backend engineer designing and building the Order
+                  Management module from scratch — owning the domain model,
+                  lifecycle states, and integration contracts with Inventory and
+                  carrier services. Concurrently contributing to the new Vue 3
+                  front-end alongside two other engineers. Backend design has
+                  been refined through ~3 months of iterative build-and-validate
+                  cycles with PM and operations stakeholders.
+                </p>
+              </div>
+              <div>
+                <p
+                  class="text-xs uppercase tracking-wider text-gray-600 font-medium mb-1"
+                >
+                  Technical Highlights
+                </p>
+                <ul class="list-disc list-inside space-y-1.5">
+                  <li>
+                    <strong
+                      >Decoupled inbound and outbound flows into separate
+                      orders</strong
+                    >
+                    rather than a single repair lifecycle, since they share no
+                    operational coupling in the existing process — keeping
+                    aggregates small, simplifying state transitions, and
+                    avoiding artificial coordination between flows that operate
+                    on different timelines.
+                  </li>
+                  <li>
+                    <strong>Designed resilient integration boundaries</strong>
+                    via a dedicated sync module and anti-corruption layer for
+                    the legacy Inventory system, which lacks event-bus support.
+                    Failure-prone external calls are isolated in dependent
+                    aggregates (e.g., the Pick aggregate) with explicit
+                    in-flight states and clean rollback semantics — every
+                    cross-module breakpoint is designed to leave the system in a
+                    recoverable state.
+                  </li>
+                  <li>
+                    <strong
+                      >Chose iterative build-and-validate over
+                      design-first</strong
+                    >
+                    for a domain no stakeholder fully understood up-front. Each
+                    design version is implemented end-to-end and validated
+                    against real workflow scenarios, surfacing requirement drift
+                    early and building shared understanding across PM,
+                    operations, and engineering.
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p
+                  class="text-xs uppercase tracking-wider text-gray-600 font-medium mb-0.5"
+                >
+                  Impact
+                </p>
+                <p>
+                  Module was deliberately scoped around generic inbound/outbound
+                  order patterns rather than the specific server repair business
+                  — making the design directly reusable for other
+                  inbound/outbound workflows across factories, well beyond the
+                  original use case. The build-and-validate methodology applied
+                  here is gaining visibility within the department, recognized
+                  as a productive alternative to design-first delivery — though
+                  current adoption remains limited to this project.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-6">
+            <p class="mb-2">
+              <strong
+                >Sydney PEGATRON | Senior Software Engineer | Jul – Oct 2025</strong
+              >
+            </p>
+            <div class="space-y-3">
+              <div>
+                <p
+                  class="text-xs uppercase tracking-wider text-gray-600 font-medium mb-0.5"
+                >
+                  Context
+                </p>
+                <p>
+                  Sydney is one of PEGATRON's repair factories, handling mobile
+                  and computer repair across ~20 production lines and 100+ part
+                  types. The HQ Inventory module did not cover line-side stock —
+                  the staging area between main inventory and the production
+                  line where operators draw parts during repair. This left two
+                  operational gaps: defective components returned from the line
+                  lost traceability, and operators could pick newly-arrived
+                  stock, breaking FIFO requirements for repair operations. Since
+                  Sydney couldn't modify HQ services directly, the team built a
+                  local satellite service extending the Inventory module to
+                  close those gaps.
+                </p>
+              </div>
+              <div>
+                <p
+                  class="text-xs uppercase tracking-wider text-gray-600 font-medium mb-0.5"
+                >
+                  Role
+                </p>
+                <p>
+                  Sole software engineer, on-site in Sydney for ~3 months,
+                  owning the service end-to-end from architecture through
+                  deployment. Worked with a PM and a domain expert recently
+                  promoted from the production line — pairing technical
+                  mentorship for their software ramp-up with their deep
+                  operational knowledge to shape design decisions.
+                </p>
+              </div>
+              <div>
+                <p
+                  class="text-xs uppercase tracking-wider text-gray-600 font-medium mb-1"
+                >
+                  Technical Highlights
+                </p>
+                <ul class="list-disc list-inside space-y-1.5">
+                  <li>
+                    <strong
+                      >Replaced mouse-driven data entry with a strict
+                      scan-sequence flow</strong
+                    >
+                    for the material runner binding returned components to
+                    request slips. The original interaction required clicking
+                    each field then scanning; the new flow enforces a fixed scan
+                    order so each scan auto-populates the corresponding field —
+                    trading UI flexibility for speed and reduced input errors
+                    during return handling.
+                  </li>
+                  <li>
+                    <strong
+                      >Closed the chain-of-custody gap between material runner
+                      and warehouse</strong
+                    >
+                    by requiring explicit warehouse acknowledgment on return
+                    drop-off. The previous workflow had no system-level
+                    confirmation when defective parts physically reached the
+                    warehouse, leading to recurring lost-control issues. The new
+                    feature holds the return open until warehouse staff
+                    acknowledge receipt — converting a one-sided handoff into a
+                    two-party verifiable event.
+                  </li>
+                  <li>
+                    <strong
+                      >Adopted constraint-driven UX as operational
+                      guardrails</strong
+                    >
+                    — both the scan-sequence flow and the warehouse handoff
+                    intentionally remove operator discretion to enforce correct
+                    process. In a factory where operators are time-pressured and
+                    procedural compliance varies, software-enforced flow proved
+                    more reliable than training-enforced flow alone.
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p
+                  class="text-xs uppercase tracking-wider text-gray-600 font-medium mb-0.5"
+                >
+                  Impact
+                </p>
+                <p>
+                  The 3-month engagement delivered the return-workflow
+                  improvements while also filling a critical operational gap
+                  left by the prior local IT engineer's departure. Mentored two
+                  local hires — the production-line transferee and a newly hired
+                  engineer — to autonomous development capability before
+                  returning to Taiwan, restoring local development continuity.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-6">
+            <p class="mb-2"><strong>PEGATRON | Software Engineer | 2022 – 2024</strong></p>
+            <ul class="list-disc list-inside space-y-1.5">
               <li>
-                To design and implement a new Order Management module, focusing
-                on inbound and outbound order workflows.
+                Designed and delivered an end-to-end Pick, Pack, and Ship system
+                for a PEGATRON manufacturing site, covering system design,
+                full-stack development, and Zebra label printer integration.
               </li>
               <li>
-                Designed core order domain models and lifecycle management,
-                aligning logistics, warehouse, and fulfillment processes.
-              </li>
-              <li>
-                Led the development of a new front-end application to transition
-                from a legacy system, improving usability, maintainability, and
-                long-term scalability.
+                Added 1,000+ unit tests to a legacy Spring codebase that
+                previously had no test coverage, establishing test discipline as
+                a baseline for ongoing development.
               </li>
             </ul>
           </div>
           <div>
-            <p><strong>Sydney PEGATRON | 2025</strong></p>
-            <ul class="list-disc list-inside">
-              <li>
-                Applied Domain-Driven Design (DDD) to develop a Warehouse
-                Management System (WMS) tailored for a Just-in-Sequence (JIS)
-                warehouse. This system supported immediate delivery of parts to
-                the production line and managed the return of defective
-                components.
-              </li>
-              <li>
-                Implemented real-time tracking for each part during delivery and
-                return, ensuring accuracy and traceability throughout the
-                workflow.
-              </li>
-              <li>
-                Designed inventory and request-list features to coordinate
-                replenishment between JIS and main warehouses.
-              </li>
-              <li>
-                Improved system reliability through production-ready
-                architecture practices, supporting continuous delivery and
-                stable operations.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p><strong>PEGATRON | 2022-2024</strong></p>
-            <ul class="list-disc list-inside">
-              <li>
-                Designed and delivered an end-to-end Pick, Pack, and Ship
-                system, covering system design, front-end and back-end
-                development, and hardware integration.
-              </li>
-              <li>
-                Gradually introduced unit tests to a legacy spring framework
-                that previously lacked test coverage. Successfully added over
-                1,000 unit tests, significantly improving code reliability and
-                maintainability.
-              </li>
-              <li>
-                Emphasized clear system design, documentation, and stakeholder
-                communication to ensure solutions met operational needs.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p><strong>Access Taiwan Lab | 2019-2022</strong></p>
-            <ul class="list-disc list-inside">
-              <li>
-                Built and maintained backend systems using Elixir, contributing
-                to production services including a mobile eBook platform.
-              </li>
-              <li>
-                Developed internal systems that automated manual operational
-                workflows, delivering significant efficiency improvements
-                through full-stack solutions
-              </li>
-            </ul>
+            <p class="mb-2">
+              <strong
+                >Access Taiwan Lab | Software Engineer | 2019 – 2022</strong
+              >
+            </p>
+            <p>
+              Backend engineer working primarily in Elixir. Built and maintained
+              production services including a mobile eBook platform, and
+              developed internal tools that automated manual operational
+              workflows.
+            </p>
           </div>
         </div>
       </section>
@@ -120,17 +271,17 @@
       <!-- Skills Section -->
       <section class="sm:flex sm:justify-between mb-7">
         <div class="font-bold mb-2 sm:mb-0 sm:basis-1/5">SKILLS</div>
-        <div class="sm:flex-1 max-w-prose">
-          <ul
-            class="list-disc list-inside grid grid-cols-1 sm:grid-cols-2 gap-x-4"
-          >
-            <li>Java(Spring)</li>
-            <li>Vue3 / React</li>
-            <li>DDD</li>
-            <li>WMS / Logistics System</li>
-            <li>OracleSQL / MongoDB</li>
-            <li>Docker</li>
-          </ul>
+        <div class="sm:flex-1 max-w-prose space-y-1">
+          <p><strong>Languages:</strong> Java, JavaScript / TypeScript</p>
+          <p><strong>Frameworks:</strong> Spring Boot, Vue 3, React</p>
+          <p>
+            <strong>Architecture:</strong> DDD, TDD, Trunk-Based Development
+          </p>
+          <p>
+            <strong>Domain Expertise:</strong> WMS, Logistics Systems, Order
+            Management
+          </p>
+          <p><strong>Databases &amp; Tools:</strong> Docker, Oracle</p>
         </div>
       </section>
       <hr class="border-black mb-7" />

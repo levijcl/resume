@@ -6,4 +6,4 @@
 
 ### Start the Tailwind CLI build process
 
-`npx tailwindcss -i ./src/input.css -o ./src/output.css --watch`
+`npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch`
