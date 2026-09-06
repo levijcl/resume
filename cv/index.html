@@ -115,6 +115,31 @@
                     early and building shared understanding across PM,
                     operations, and engineering.
                   </li>
+                  <li>
+                    <strong
+                      >Embedded an MCP server in the existing service</strong
+                    >
+                    — shipping with the module's first release rather than as a
+                    separate deployment — exposing the CQRS query side as an
+                    invariant-checked diagnostic report for a single order. The
+                    report states facts and violated invariants only — never a
+                    root cause — and explicitly lists what it did not check, so
+                    an LLM knows when to stop inferring. Checks are pure
+                    functions over one snapshot with a four-state outcome,
+                    making "uncertain" a first-class result rather than a
+                    confident wrong answer.
+                  </li>
+                  <li>
+                    <strong
+                      >Owned delivery and operability alongside the domain
+                      model</strong
+                    >
+                    — trunk-based branching with tag-triggered deploys (release
+                    branches as frozen snapshots, fix-main-first, a daily CI
+                    audit asserting nothing lives only on a release branch), an
+                    OTLP logging pipeline into Elasticsearch, custom
+                    inbox/outbox metrics, and DRI on-call rotation.
+                  </li>
                 </ul>
               </div>
               <div>
