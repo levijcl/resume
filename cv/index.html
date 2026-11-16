@@ -57,7 +57,9 @@
                   Ship workflow. The module sits at the integration center —
                   bridging Inventory, carrier services, and repair-line
                   operations — so reliability matters more than throughput at
-                  this stage.
+                  this stage. The module has since been extended to a second
+                  customer and additional factories with differing service
+                  types.
                 </p>
               </div>
               <div>
@@ -72,8 +74,9 @@
                   lifecycle states, and integration contracts with Inventory and
                   carrier services. Concurrently contributing to the new Vue 3
                   front-end alongside two other engineers. Backend design has
-                  been refined through ~3 months of iterative build-and-validate
-                  cycles with PM and operations stakeholders.
+                  been refined through iterative build-and-validate cycles with
+                  PM and operations stakeholders, from first design through
+                  production rollout.
                 </p>
               </div>
               <div>
@@ -117,6 +120,22 @@
                   </li>
                   <li>
                     <strong
+                      >Generalized for multiple customers only once a second
+                      one arrived</strong
+                    >
+                    — the first customer's flows were deliberately kept
+                    specialized, then distilled operation by operation once a
+                    real second sample existed. Per-customer differences live
+                    in a single domain-level <code>CustomerPolicy</code>
+                    resolved from the order; only the create-order API is split
+                    per customer, while every later operation (pick, pack,
+                    ship, cancel) shares one endpoint and one command, with
+                    rules enforced in the backend rather than hidden in the UI.
+                    New customers plug in alongside without touching shared
+                    endpoints.
+                  </li>
+                  <li>
+                    <strong
                       >Embedded an MCP server in the existing service</strong
                     >
                     — shipping with the module's first release rather than as a
@@ -138,7 +157,21 @@
                     branches as frozen snapshots, fix-main-first, a daily CI
                     audit asserting nothing lives only on a release branch), an
                     OTLP logging pipeline into Elasticsearch, custom
-                    inbox/outbox metrics, and DRI on-call rotation.
+                    inbox/outbox metrics, Playwright E2E tests running in
+                    Jenkins, and DRI on-call rotation.
+                  </li>
+                  <li>
+                    <strong
+                      >Designed the release workflow for a front-end repo
+                      shared across teams</strong
+                    >
+                    — a single Vite bundle meant any unaccepted feature blocked
+                    everyone's release. Separated "what is under test" from
+                    "what is releasable" with a disposable UAT integration
+                    branch that never merges back, keeping main always
+                    shippable, plus a two-day pre-release freeze so a fixed
+                    weekly release train runs independently of unpredictable
+                    UAT timelines.
                   </li>
                 </ul>
               </div>
@@ -151,9 +184,11 @@
                 <p>
                   Module was deliberately scoped around generic inbound/outbound
                   order patterns rather than the specific server repair business
-                  — making the design directly reusable for other
-                  inbound/outbound workflows across factories, well beyond the
-                  original use case. The build-and-validate methodology applied
+                  — and that scoping has paid off: the module went to production
+                  in September 2026, including its SAP sales-order sync, and
+                  has since been reused for a second customer launched in
+                  October and additional factories, without forking the core
+                  flow. The build-and-validate methodology applied
                   here is gaining visibility within the department, recognized
                   as a productive alternative to design-first delivery — though
                   current adoption remains limited to this project.
@@ -300,13 +335,21 @@
           <p><strong>Languages:</strong> Java, JavaScript / TypeScript</p>
           <p><strong>Frameworks:</strong> Spring Boot, Vue 3, React</p>
           <p>
-            <strong>Architecture:</strong> DDD, TDD, Trunk-Based Development
+            <strong>Architecture:</strong> DDD, CQRS, TDD, Trunk-Based
+            Development
           </p>
           <p>
             <strong>Domain Expertise:</strong> WMS, Logistics Systems, Order
             Management
           </p>
-          <p><strong>Databases &amp; Tools:</strong> Docker, Oracle</p>
+          <p>
+            <strong>Databases &amp; Tools:</strong> Oracle, Kafka, Docker,
+            Jenkins, Playwright
+          </p>
+          <p>
+            <strong>Observability &amp; AI:</strong> OpenTelemetry,
+            Micrometer, Elasticsearch, MCP
+          </p>
         </div>
       </section>
       <hr class="border-black mb-7" />
