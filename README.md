@@ -31,7 +31,7 @@ For a one-off minified build: `npm run build`.
 
 ## Print / PDF
 
-Both pages include A4 print styles. Use the browser's **Print → Save as PDF**.
+The resume page (`index.html`) includes A4 print styles. Use the browser's **Print → Save as PDF**.
 
 ## Deployment
 
@@ -39,6 +39,9 @@ Every push to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/dep
 install, `npm run build`, stage `index.html`, `cv/`, `src/output.css` into `_site/`,
 then deploy to GitHub Pages. The custom domain `resume.levijcl.com` is configured
 in the repository's Pages settings.
+
+**Rollback:** revert the offending commit (or re-run an earlier workflow run). Don't switch
+Pages back to "Deploy from a branch" — `main` no longer contains `src/output.css`.
 
 ## License
 
