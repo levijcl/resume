@@ -1,9 +1,45 @@
-# Resume
+# Levi Chiang — Resume
 
-[link](https://levijcl.github.io/resume/)
+[![Deploy](https://github.com/levijcl/resume/actions/workflows/deploy.yml/badge.svg)](https://github.com/levijcl/resume/actions/workflows/deploy.yml)
+
+Personal resume and CV, built as static HTML pages styled with Tailwind CSS.
+
+## Live
+
+- **Resume:** <https://resume.levijcl.com>
+- **CV:** <https://resume.levijcl.com/cv>
+
+## Stack
+
+- Static HTML (`index.html`, `cv/index.html`)
+- [Tailwind CSS v4](https://tailwindcss.com/) via the standalone CLI
+- GitHub Pages, deployed by GitHub Actions
 
 ## Development
 
-### Start the Tailwind CLI build process
+```bash
+npm ci
+npm run dev   # rebuilds src/output.css on change
+```
 
-`npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch`
+Then open `index.html` (or `cv/index.html`) in a browser.
+
+> `src/output.css` is generated and **not committed**. Pages render unstyled
+> until you run `npm run dev` or `npm run build` once.
+
+For a one-off minified build: `npm run build`.
+
+## Print / PDF
+
+Both pages include A4 print styles. Use the browser's **Print → Save as PDF**.
+
+## Deployment
+
+Every push to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml):
+install, `npm run build`, stage `index.html`, `cv/`, `src/output.css` into `_site/`,
+then deploy to GitHub Pages. The custom domain `resume.levijcl.com` is configured
+in the repository's Pages settings.
+
+## License
+
+[MIT](LICENSE)
