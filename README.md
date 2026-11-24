@@ -43,6 +43,12 @@ in the repository's Pages settings.
 **Rollback:** revert the offending commit (or re-run an earlier workflow run). Don't switch
 Pages back to "Deploy from a branch" — `main` no longer contains `src/output.css`.
 
+## Dependency updates
+
+Dependabot (`.github/dependabot.yml`) checks npm packages and GitHub Actions every
+Monday 06:00 (Asia/Taipei) and opens grouped PRs. Pull requests run the build (no deploy),
+so a broken upgrade shows up before merge.
+
 ## License
 
 [MIT](LICENSE)
